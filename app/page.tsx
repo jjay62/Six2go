@@ -16,7 +16,7 @@ import SmallMenu from '@/components/smallmenu';
 const cards = [
   { id: 1, title: "Why us?", desc: "Cheap and all around the world food options.", icon: <CashIcon /> },
   { id: 2, title: "Is it fast?", desc: "100% we got Max Verstappen as our driver.", icon: <RaceCarIcon /> },
-  { id: 3, title: "Why would I ever use this?", desc: "everyone loves food and wants to meet Max right?.", icon: <QuestionIcon /> },
+  { id: 3, title: "Why would I ever order from here?", desc: "everyone loves food and wants to meet Max right?.", icon: <QuestionIcon /> },
 ];
 
 export default async function Home() {
@@ -34,7 +34,7 @@ export default async function Home() {
   .select('*')
   .order('id')
   .limit(8) // Use diffrent items later using select for now just use limit no choices for now but probably the same as the 4 except double the amount
-  
+  // FIX ISSUE WITH FOOD ITEMS NOT SHOWING UP BECAUSE LIMIT IS 8 FILTER DOESNT WORK ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   return (
     <div>
       <Header />
