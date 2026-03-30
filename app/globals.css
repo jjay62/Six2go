@@ -18,7 +18,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.faqanimation {
+  animation: faqanimation 1s ease-in-out infinite;
+}
+@keyframes faqanimation {
 
+}
 .scrolling-text {
   display: inline-block;
   white-space: nowrap;
