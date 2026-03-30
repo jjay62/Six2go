@@ -12,7 +12,7 @@ const BtnSM = ({ children, onClick, active }: BtnSMProps) => {
       onClick={onClick}
       className={`w-28 h-9 rounded-md text-sm font-medium transition-colors
         ${active
-          ? 'bg-blue-600 text-white'
+          ? 'bg-blue-600 text-white focus:outline-2 focus:outline-offset-2 focus:outline-blue-500'
           : 'bg-blue-900 text-white hover:bg-blue-950'
         }`}
     >
