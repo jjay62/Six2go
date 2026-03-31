@@ -1,7 +1,7 @@
-import { NextIntlClientProvider, hasLocale} from 'next-intl'
+import { NextIntlClientProvider } from 'next-intl'
 import type { Metadata } from "next";
 import "./globals.css";
-import {routing} from '@/i18n/routing'
+import { routing } from '@/i18n/routing'
 import { notFound } from 'next/navigation'
 import { getMessages } from 'next-intl/server';
 export const metadata: Metadata = {
@@ -19,11 +19,11 @@ export default async function RootLayout({
 
   const { locale } = await params;
 
-if (!hasLocale(routing.locales, locale)) {
+if (!routing.locales.includes(locale as any)) {
   notFound()
 }
   return (
-    <html>
+    <html lang={locale}>
     <body className="min-h-full flex flex-col">
       <NextIntlClientProvider messages={await getMessages()}>
           {children}

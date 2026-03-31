@@ -22,7 +22,7 @@ export default async function ProductDetails ({
   return (
     <>
       <Header />
-    <div className="flex flex-col-2 items-center justify-center gap-40 mb-24">
+    <div className="flex items-center justify-center gap-40 mb-24">
       <img src={product?.image} alt="" className="h-96 w-lg rounded-lg mt-30" />
       <div className="flex flex-col items-center justify-center mt-28 ">
       <h1 className="text-3xl font-bold mb-2">{product?.title}</h1>
