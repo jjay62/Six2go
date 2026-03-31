@@ -1,6 +1,9 @@
 import { redirect } from 'next/navigation'
 import { stripe } from '@/app/lib/stripe'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default async function Success({
   searchParams,
@@ -24,12 +27,25 @@ export default async function Success({
 
   if (status === 'complete') {
     return (
-      <section id="success">
-        <p>
-        Thanks for ordering from six2go! We will send it as soon as possible.
-        </p>
-        <Link href="/" className="text-blue-500 hover:text-blue-700 hover:underline">Go back to the home page</Link>
-      </section>
-    )
+      <>
+        <Header />
+          <div className="flex flex-col items-center justify-center mt-30 mb-40">
+            <div className="text-center mb-8">
+            <Image src="/logooooo.png" alt="six2go" width={200} height={10} />
+            </div>
+          <h1 className="text-3xl font-bold mb-6">Order successful</h1>
+          <p className="text-white/80 mb-8">
+          Thanks for ordering from six2go! We will send it as soon as possible.
+          </p>
+
+          <div className="text-center mt-4">
+          <Link href="/" className="text-sm text-[#2992CF] hover:text-blue-700 hover:underline">
+            Back to home
+          </Link>
+        </div>
+        </div>
+        <Footer />
+      </>
+    );
   }
 }
