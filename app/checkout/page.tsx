@@ -57,6 +57,7 @@ export default async function CheckoutPage() {
                 title?: string
                 price?: number
                 image?: string
+                id?: string
               } | null
 
               return (
@@ -68,13 +69,13 @@ export default async function CheckoutPage() {
                     {menuItem?.image && (
                       <img
                         src={menuItem.image}
-                        alt={menuItem.title ?? ''}
+                        alt={""}
                         className="h-14 w-14 rounded-md object-cover"
                       />
                     )}
                     <div>
                       <p className="font-semibold text-white">
-                        {menuItem?.title ?? 'Unknown item'}
+                      <Link href={`/products/${menuItem?.id}`} className="hover:text-blue-500 hover:underline">{menuItem?.title ?? 'item not found'}</Link>
                       </p>
                       <p className="text-sm text-white/50">
                         €{(menuItem?.price ?? 0).toFixed(2)}
