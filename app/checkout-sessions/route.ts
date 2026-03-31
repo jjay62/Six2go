@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { headers } from 'next/headers'
 import { createClient } from '@/app/lib/server'
-import { stripe } from '@/app/lib/stripe.js'
+import { stripe } from '@/app/lib/stripe'
 
 type MenuItemJoin = { title?: string | null; price?: number | null } | null
 
@@ -62,7 +62,7 @@ export async function POST() {
     const session = await stripe.checkout.sessions.create({
       line_items,
       mode: 'payment',
-      success_url: `${origin}/checkout-succes?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${origin}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/checkout`,
       client_reference_id: user.id,
     })

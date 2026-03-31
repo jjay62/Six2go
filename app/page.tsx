@@ -15,7 +15,7 @@ import Faqsection from '@/components/faqsection';
 const cards = [
   { id: 1, title: "Why us?", desc: "Cheap and all around the world food options.", icon: <CashIcon /> },
   { id: 2, title: "Is it fast?", desc: "100% we got Max Verstappen as our driver.", icon: <RaceCarIcon /> },
-  { id: 3, title: "Why would I ever order from here?", desc: "everyone loves food and wants to meet Max right?.", icon: <QuestionIcon /> },
+  { id: 3, title: "Why would I ever order from here?", desc: "everyone loves food and wants to meet Max right?", icon: <QuestionIcon /> },
 ];
 
 export default async function Home() {
@@ -33,7 +33,7 @@ export default async function Home() {
   .select('*')
   .order('id')
   return (
-    <div >
+    <>
       <div className="fixed top-0 left-0 right-0 z-50 bg-[#1f2937]">
       <Header />
       </div>
@@ -58,6 +58,6 @@ export default async function Home() {
       </div>
 
       <Footer />
-    </div>
+    </>
   );
 }

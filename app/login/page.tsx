@@ -12,10 +12,11 @@ function LoginForm() {
   const [mode, setMode] = useState<'login' | 'signup'>('login')
   const [error, setError] = useState(searchParams.get('error') || '')
   const [message, setMessage] = useState(searchParams.get('message') || '')
-
+  const [showAlert, setShowAlert] = useState(true)
   const clearParams = () => {
     setError('')
     setMessage('')
+    setShowAlert(false)
     router.replace('/login', { scroll: false })
   }
 
@@ -26,8 +27,19 @@ function LoginForm() {
           <Link href="/" className="inline-block">
             <Image src="/logooooo.png" alt="six2go" width={150} height={10} priority />
           </Link>
-        </div>
-
+          </div>
+          {showAlert && (
+          <div className="text-center flex items-center justify-center mb-12 border border-white/20 bg-red-700/80 rounded-md px-2 py-2">
+            <p className="text-sm font-bold text-white mb-1">to order at six2go, you need to login or create an account</p>
+            <button
+              type="button"
+              onClick={() => { clearParams() }}
+              className="ml-3 text-red-200 hover:text-white hover:scale-120 bg-white/20 rounded-full px-3 py-2 transition-colors text-md leading-none"
+              style={{ display: showAlert ? 'block' : 'none' }}
+            >
+              x
+            </button>
+          </div> )}
         <div className="flex mb-6 rounded-lg overflow-hidden border border-white/20">
           <button
             type="button"
@@ -61,7 +73,6 @@ function LoginForm() {
             ? 'Enter your email and password to sign in.'
             : 'Enter your email and choose a password (min. 6 characters).'}
         </p>
-
         {error && (
           <div className="flex items-center justify-between bg-red-500/20 border border-red-500/50 text-red-200 px-4 py-3 rounded-lg text-sm mb-4">
             <span>{error}</span>
@@ -85,7 +96,7 @@ function LoginForm() {
               className="ml-3 text-green-200 hover:text-white transition-colors text-lg leading-none"
               aria-label="Dismiss message"
             >
-              &times;
+              x
             </button>
           </div>
         )}

@@ -15,6 +15,7 @@ export async function addToCart(menuItemId: number) {
   const { data: { user } } = await supabase.auth.getUser()
 
   if (!user) redirect('/login')
+    
 
 
   const { data: existing } = await supabase

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { headers } from 'next/headers'
 
-import { stripe } from '../../../lib/stripe'
+import { stripe } from '@/app/lib/stripe'
 
 export async function POST(req) {
   let event
@@ -13,12 +13,9 @@ export async function POST(req) {
       process.env.STRIPE_WEBHOOK_SECRET
     )
   } catch (err) {
-    const errorMessage = err.message
-    // On error, log and return the error message.
-    if (err) console.log(err)
-    console.log(`Error message: ${errorMessage}`)
+    console.log(err)
     return NextResponse.json(
-      { message: `Webhook Error: ${errorMessage}` },
+      { message: `Webhook Error: ${err.message}` },
       { status: 400 }
     )
   }
@@ -40,7 +37,7 @@ export async function POST(req) {
     } catch (error) {
       console.log(error)
       return NextResponse.json(
-        { message: 'Webhook handler failed' },
+        { message: `Webhook handler failed: ${error.message}`},
         { status: 500 }
       )
     }

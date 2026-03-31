@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation'
-import { stripe } from '@/app/lib/stripe.js'
+import { stripe } from '@/app/lib/stripe'
 import Link from 'next/link'
 
 export default async function Success({
@@ -10,7 +10,7 @@ export default async function Success({
   const { session_id } = await searchParams
 
   if (!session_id)
-    throw new Error('Please provide a valid session_id (`cs_test_...`)')
+    throw new Error('please provide a valid session_id')
 
   const {
     status,

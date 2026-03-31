@@ -13,7 +13,7 @@ export async function login(formData: FormData) {
   })
 
   if (error) {
-    redirect('/login?error=' + encodeURIComponent(error.message))
+    redirect('/login?error=' + encodeURIComponent('Login failed, please try again'))
   }
 
   revalidatePath('/', 'layout')
@@ -29,7 +29,7 @@ export async function signup(formData: FormData) {
   })
 
   if (error) {
-    redirect('/login?error=' + encodeURIComponent(error.message))
+    redirect('/login?error=' + encodeURIComponent('Signup failed. Please try again.'))
   }
 
   revalidatePath('/', 'layout')

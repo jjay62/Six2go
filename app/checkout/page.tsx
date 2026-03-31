@@ -9,7 +9,6 @@ import {
 } from '@/app/actions/cart'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import CheckoutTestButton from '@/components/checkoutbutton'
 import CheckoutButton from '@/components/checkoutbutton'
 
 export default async function CheckoutPage() {
@@ -28,10 +27,6 @@ export default async function CheckoutPage() {
 
   if (cartError) console.error('CART SELECT error:', cartError)
 
-    const totalItems = cartItems?.reduce(
-      (sum, item) => sum + item.quantity,
-      0
-    ) ?? 0
     
     const totalPrice = cartItems?.reduce((sum, item) => {
       const menuItem = item.menu_items as { price?: number } | null
@@ -53,7 +48,7 @@ export default async function CheckoutPage() {
 
         {!cartItems || cartItems.length === 0 ? (
           <p className="text-sm text-white/50">
-            Your stumache is empty😭. add something to your cart to fill it up.
+            Your stomach is empty😭. add something to your cart to fill it up.
           </p>
         ) : (
           <div className="space-y-4">
@@ -138,7 +133,7 @@ export default async function CheckoutPage() {
               )
             })}
 
-            <div className="flex flex-inline justify-between pt-2 mt-4 items-center">
+            <div className="flex justify-between pt-2 mt-4 items-center">
               <span className="font-bold text-white">Total</span>
               <span className="font-bold text-white">
                 €{totalPrice.toFixed(2)}
