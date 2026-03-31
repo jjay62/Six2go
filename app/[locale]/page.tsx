@@ -3,24 +3,24 @@ import Footer from '@/components/footer';
 import Card from '@/components/card';
 import Hero from '@/components/hero';
 import { CashIcon, RaceCarIcon, QuestionIcon } from '@/components/icons';
-import '@/app/globals.css';
+import './globals.css';
 import FoodItem from '@/components/fooditem';
-import { supabase } from '@/app/lib/supabase'
+import { supabase } from '@/app/[locale]/lib/supabase'
 import AboutSection from '@/components/aboutsection';
 import TopChoices from '@/components/topchoices';
 import SmallMenu from '@/components/smallmenu';
 import Faqsection from '@/components/faqsection';
+import { getTranslations } from 'next-intl/server';
 
-
-const cards = [
-  { id: 1, title: "Why us?", desc: "Cheap and all around the world food options.", icon: <CashIcon /> },
-  { id: 2, title: "Is it fast?", desc: "100% we got Max Verstappen as our driver.", icon: <RaceCarIcon /> },
-  { id: 3, title: "Why would I ever order from here?", desc: "everyone loves food and wants to meet Max right?", icon: <QuestionIcon /> },
-];
 
 export default async function Home() {
+  const t = await getTranslations('Cards');
 
-
+  const cards = [
+    { id: 1, title: t('card1Title'), desc: t('card1Desc'), icon: <CashIcon /> },
+    { id: 2, title: t('card2Title'), desc: t('card2Desc'), icon: <RaceCarIcon /> },
+    { id: 3, title: t('card3Title'), desc: t('card3Desc'), icon: <QuestionIcon /> },
+  ];
 
   const { data: FourFood } = await supabase
   .from('menu_items')
@@ -34,7 +34,7 @@ export default async function Home() {
   .order('id')
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50 bg-[#1f2937]">
+      <div className="fixed inset-x-0 top-0 z-50 w-full bg-[#1f2937]">
       <Header />
       </div>
       <Hero />

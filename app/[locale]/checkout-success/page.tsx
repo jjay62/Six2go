@@ -1,9 +1,10 @@
 import { redirect } from 'next/navigation'
-import { stripe } from '@/app/lib/stripe'
+import { stripe } from '@/app/[locale]/lib/stripe'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Link from 'next/link'
 import Image from 'next/image'
+import { getTranslations } from 'next-intl/server'
 
 export default async function Success({
   searchParams,
@@ -25,6 +26,8 @@ export default async function Success({
     return redirect('/')
   }
 
+  const t = await getTranslations('CheckoutSuccess')
+
   if (status === 'complete') {
     return (
       <>
@@ -33,14 +36,14 @@ export default async function Success({
             <div className="text-center mb-8">
             <Image src="/logooooo.png" alt="six2go" width={200} height={10} />
             </div>
-          <h1 className="text-3xl font-bold mb-6">Order successful</h1>
+          <h1 className="text-3xl font-bold mb-6">{t('title')}</h1>
           <p className="text-white/80 mb-8">
-          Thanks for ordering from six2go! We will send it as soon as possible.
+          {t('description')}
           </p>
 
           <div className="text-center mt-4">
           <Link href="/" className="text-sm text-[#2992CF] hover:text-blue-700 hover:underline">
-            Back to home
+            {t('backToHome')}
           </Link>
         </div>
         </div>

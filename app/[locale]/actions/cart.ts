@@ -2,7 +2,7 @@
 
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
-import { createClient } from '@/app/lib/server'
+import { createClient } from '@/app/[locale]/lib/server'
 
 function revalidateCartPages() {
   revalidatePath('/checkout')

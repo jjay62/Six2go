@@ -1,7 +1,7 @@
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import BigMenu from '@/components/bigmenu';
-import { supabase } from '@/app/lib/supabase';
+import { supabase } from '@/app/[locale]/lib/supabase';
 
 
 

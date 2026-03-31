@@ -1,15 +1,16 @@
 import React from 'react'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import { createClient } from '@/app/lib/server'
+import { createClient } from '@/app/[locale]/lib/server'
 import {
   increase,
   decrease,
   remove,
-} from '@/app/actions/cart'
+} from '@/app/[locale]/actions/cart'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import CheckoutButton from '@/components/checkoutbutton'
+import { getTranslations } from 'next-intl/server'
 
 export default async function CheckoutPage() {
   const supabase = await createClient()
@@ -27,11 +28,12 @@ export default async function CheckoutPage() {
 
   if (cartError) console.error('CART SELECT error:', cartError)
 
-    
-    const totalPrice = cartItems?.reduce((sum, item) => {
-      const menuItem = item.menu_items as { price?: number } | null
-      return sum + (menuItem?.price ?? 0) * item.quantity
-    }, 0) ?? 0
+  const totalPrice = cartItems?.reduce((sum, item) => {
+    const menuItem = item.menu_items as { price?: number } | null
+    return sum + (menuItem?.price ?? 0) * item.quantity
+  }, 0) ?? 0
+
+  const t = await getTranslations('Checkout')
 
   return (
     <>
@@ -40,15 +42,15 @@ export default async function CheckoutPage() {
     </div>
     <div className="mx-auto w-full max-w-2xl px-4 py-8">
       <h1 className="mb-8 mt-8 px-4 py-3 text-center text-3xl font-bold text-white">
-        🛒 Your Cart List 🛒
+        {t('title')}
       </h1>
 
       <div className="mb-8 rounded-lg border border-white/10 bg-gray-900 p-20">
-        <h2 className="mb-4 text-lg font-bold text-white">Your Cart</h2>
+        <h2 className="mb-4 text-lg font-bold text-white">{t('yourCart')}</h2>
 
         {!cartItems || cartItems.length === 0 ? (
           <p className="text-sm text-white/50">
-            Your stomach is empty😭. add something to your cart to fill it up.
+            {t('emptyCart')}
           </p>
         ) : (
           <div className="space-y-4">
@@ -75,7 +77,7 @@ export default async function CheckoutPage() {
                     )}
                     <div>
                       <p className="font-semibold text-white">
-                      <Link href={`/products/${menuItem?.id}`} className="hover:text-blue-500 hover:underline">{menuItem?.title ?? 'item not found'}</Link>
+                      <Link href={`/products/${menuItem?.id}`} className="hover:text-blue-500 hover:underline">{menuItem?.title ?? t('itemNotFound')}</Link>
                       </p>
                       <p className="text-sm text-white/50">
                         €{(menuItem?.price ?? 0).toFixed(2)}
@@ -126,7 +128,7 @@ export default async function CheckoutPage() {
                         type="submit"
                         className="ml-2 border border-none rounded-xl p-3 bg-red-950 text-sm text-red-400 transition-colors hover:text-red-300"
                       >
-                        Remove
+                        {t('remove')}
                       </button>
                     </form>
                   </div>
@@ -135,7 +137,7 @@ export default async function CheckoutPage() {
             })}
 
             <div className="flex justify-between pt-2 mt-4 items-center">
-              <span className="font-bold text-white">Total</span>
+              <span className="font-bold text-white">{t('total')}</span>
               <span className="font-bold text-white">
                 €{totalPrice.toFixed(2)}
               </span>
@@ -147,14 +149,12 @@ export default async function CheckoutPage() {
         )}
       </div>
 
-      
-
       <div className="px-2 py-6">
         <Link
           href="/"
           className="mb-6 inline-block text-sm text-[#2992CF] hover:underline"
         >
-          ← Back to home
+          {t('backToHome')}
         </Link>
       </div>
     </div>
