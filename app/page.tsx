@@ -9,14 +9,13 @@ import { supabase } from '@/app/lib/supabase'
 import AboutSection from '@/components/aboutsection';
 import TopChoices from '@/components/topchoices';
 import SmallMenu from '@/components/smallmenu';
-
-
+import Faqsection from '@/components/faqsection';
 
 
 const cards = [
   { id: 1, title: "Why us?", desc: "Cheap and all around the world food options.", icon: <CashIcon /> },
   { id: 2, title: "Is it fast?", desc: "100% we got Max Verstappen as our driver.", icon: <RaceCarIcon /> },
-  { id: 3, title: "Why would I ever use this?", desc: "everyone loves food and wants to meet Max right?.", icon: <QuestionIcon /> },
+  { id: 3, title: "Why would I ever order from here?", desc: "everyone loves food and wants to meet Max right?.", icon: <QuestionIcon /> },
 ];
 
 export default async function Home() {
@@ -27,17 +26,17 @@ export default async function Home() {
   .from('menu_items')
   .select('*')
   .order('id')
-  .limit(4) // Use diffrent items later using select for now just use limit it should be normal items burger, pizza, pasta, meal deal
+  .in("id", [1, 6, 10, 17])
 
   const { data: smallMenu } = await supabase
   .from('menu_items')
   .select('*')
   .order('id')
-  .limit(8) // Use diffrent items later using select for now just use limit no choices for now but probably the same as the 4 except double the amount
-  
   return (
-    <div>
+    <div >
+      <div className="fixed top-0 left-0 right-0 z-50 bg-[#1f2937]">
       <Header />
+      </div>
       <Hero />
       <TopChoices />
 
@@ -50,7 +49,7 @@ export default async function Home() {
 
       <SmallMenu items={smallMenu ?? []} />
 
-
+      <Faqsection />
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto px-4 py-4 justify-items-center md:justify-items-stretch">
         {cards.map((card) => (

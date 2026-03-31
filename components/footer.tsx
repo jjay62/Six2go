@@ -8,15 +8,16 @@ const Footer = () => {
         <section>
           <h3 className="font-semibold text-sm uppercase tracking-wider text-white/80 mb-3">Site Map</h3>
           <nav className="flex flex-col gap-2">
-            <Link href="/home" className="text-white hover:text-blue-600 hover:underline">Home</Link>
-            <Link href="/menu" className="text-white hover:text-blue-600 hover:underline">menu</Link>
-            <Link href="/about" className="text-white hover:text-blue-600 hover:underline">About</Link>
+            <Link href="/home" className="text-white hover:text-blue-500 hover:underline">Home</Link>
+            <Link href="/menu" className="text-white hover:text-blue-500 hover:underline">menu</Link>
+            <Link href="/about" className="text-white hover:text-blue-500 hover:underline">About</Link>
+            <Link href="/login" className="text-white hover:text-blue-500 hover:underline">Login / Sign up</Link>
           </nav>
         </section>
         <section>
           <h3 className="font-semibold text-sm uppercase tracking-wider text-white/80 mb-3">Contact</h3>
           <div className="flex flex-col gap-1 text-sm">
-            <a href="mailto:jayklav62@gmail.com" className="text-white hover:text-blue-600 hover:underline">hello@eventapp.com</a>
+            <a href="mailto:jayklav62@gmail.com" className="text-white hover:text-blue-600 hover:underline">jayklav62@gmail.com</a>
             <span><a href="tel:+310633376647" className="text-white hover:text-blue-600 hover:underline">(+31) 0633376647</a></span>
           </div>
         </section>

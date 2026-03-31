@@ -13,7 +13,7 @@ export default function PrivacyPage() {
         </p>
         <div className="space-y-4 text-foreground/90">
           <p>
-            This is a placeholder privacy policy. Event App respects your privacy and is committed
+            This is a placeholder privacy policy. SIX2GO respects your privacy and is committed
             to protecting your personal data.
           </p>
           <h2 className="text-lg font-semibold mt-6">Information We Collect</h2>
