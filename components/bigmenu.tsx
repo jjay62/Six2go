@@ -2,10 +2,10 @@
 import React, { useState } from 'react';
 import FoodItem from './fooditem';
 import BtnSM from './btnsm';
-type Category = 'All' | 'meal Deals' | 'burgers' | 'sides'| 'pizzas' | 'pastas'| 'desserts' | 'drinks';
+type Category = 'All' | 'Meal Deals' | 'Burgers' | 'Sides'| 'Pizzas' | 'Pastas'| 'Desserts' | 'Drinks';
 
 const categories: Category[] = [
-  'All', 'meal Deals', 'burgers', 'pizzas', 'sides', 'pastas', 'desserts', 'drinks',
+  'All', 'Meal Deals', 'Burgers', 'Pizzas', 'Sides', 'Pastas', 'Desserts', 'Drinks',
 ];
 
 
@@ -22,22 +22,18 @@ interface MenuItem {
 interface BigMenuProps {
   items: MenuItem[];
 }
-const Products_per_page = 8;
+const ProductsPerPage = 8;
 const BigMenu = ({ items }: BigMenuProps) => {
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState<Category>('All');
   const filtered = filter === 'All'
     ? items
     : items.filter((item) => {
-        const categories = Array.isArray(item.categories)
-          ? item.categories
-          : typeof item.categories === 'string'
-            ? (item.categories as string).split(',').map((string) => string.trim())
-            : [];
+        const categories = item.categories;
         return categories.some((category) => category.toLowerCase() === filter.toLowerCase());
       });
-  const totalPages = Math.ceil(filtered.length / Products_per_page);
-  const paged = filtered.slice((page - 1) * Products_per_page, page * Products_per_page);
+  const totalPages = Math.ceil(filtered.length / ProductsPerPage);
+  const paged = filtered.slice((page - 1) * ProductsPerPage, page * ProductsPerPage);
 
   return (
     <>

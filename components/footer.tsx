@@ -3,6 +3,8 @@ import React from 'react'
 
 const Footer = () => {
   return (
+    <>
+    
     <footer className="border-t border-white/20 px-6 py-8 mt-auto text-white ">
       <div className="max-w-7xl mx-auto flex flex-row flex-wrap gap-6 sm:gap-12 justify-between">
         <section>
@@ -27,6 +29,8 @@ const Footer = () => {
         </section>
       </div>
     </footer>
+    <p className="text-center text-white/60 text-sm">made by ❤️ jay62.</p>
+    </>
   )
 }
 

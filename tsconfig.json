@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/checkout-sessions/route.js"  ],
+, "app/checkout-sessions/route.ts", "app/webhooks/route.js"  ], // using js because stripe documentation changed session to ts because review told me to do so
   "exclude": ["node_modules"]
 }

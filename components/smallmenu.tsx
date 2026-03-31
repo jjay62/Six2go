@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import BtnSM from './btnsm';
 import FoodItem from './fooditem';
 
-type Category = 'Our choices' | 'meal Deals' | 'burgers' | 'pizzas' | 'pastas'| 'desserts' | 'drinks';
+type Category = 'Our choices' | 'Meal Deals' | 'Burgers' | 'Pizzas' | 'Pastas'| 'Desserts' | 'Drinks';
 
 const categories: Category[] = [
-  'Our choices', 'meal Deals', 'burgers', 'pizzas', 'pastas', 'desserts', 'drinks',
+  'Our choices', 'Meal Deals', 'Burgers', 'Pizzas', 'Pastas', 'Desserts', 'Drinks',
 ];
 
 
@@ -30,12 +30,7 @@ const SmallMenu = ({ items }: SmallMenuProps) => {
   const filtered = filter === 'Our choices'
     ? ids.map((id) => items.find((item) => item.id === id)).filter(Boolean) as MenuItem[]
     : items.filter((item) => {
-        const categories = Array.isArray(item.categories)
-          ? item.categories
-          : typeof item.categories === 'string'
-            ? (item.categories as string).split(',').map((string) => string.trim())
-            : [];
-        return categories.some((category) => category.toLowerCase() === filter.toLowerCase());
+        return item.categories.some((category) => category.toLowerCase() === filter.toLowerCase());
       });
 
   return (

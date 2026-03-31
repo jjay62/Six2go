@@ -5,14 +5,13 @@ import Image from 'next/image'
 import { CartIcon } from './cartIcon'
 
 
-export async function getTotalItems() {
+export async function getTotalItems(userId: string | null) {
+  if (!userId) return 0
   const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) redirect('/login')
   const { data: cartItems } = await supabase
     .from('cart_items')
     .select('quantity')
-    .eq('user_id', user.id)
+    .eq('user_id', userId)
   return cartItems?.reduce((sum, item) => sum + item.quantity, 0) ?? 0
 }
 
@@ -26,13 +25,13 @@ async function signOut() {
 const Header = async () => {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
-  const totalItems = user ?await getTotalItems() : 0
+  const totalItems = await getTotalItems(user?.id ?? null)
 
   return (
     <>
 
     <div className='flex justify-center items-center text-bold text-1xl tracking-widest bg-blue-900 py-1.5'>
-    <h3 className='scrolling-text'>NOW ALL DESSERTS ARE €6,50</h3>
+    <h3 className='scrolling-text'>NOW ALL DESSERTS AND SIDES ARE €6,50</h3>
     
   </div>
 <div className="border-b border-white/20 px-6 py-4 text-white bg-[#1c2433]">
