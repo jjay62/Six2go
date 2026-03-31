@@ -82,7 +82,7 @@ export default async function CheckoutPage() {
                       </p>
                     </div>
                   </div>
-
+{/**/}
                   <div className="flex items-center gap-2">
                     <form
                       action={async () => {
