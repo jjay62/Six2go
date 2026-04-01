@@ -57,7 +57,7 @@ export async function POST() {
     const origin =
       headersList.get('origin') ??
       (process.env.NEXT_PUBLIC_SITE_URL as string | undefined) ??
-      'https://sixtwogo.vercel.app'
+      'http://localhost:3000'
 
     const session = await stripe.checkout.sessions.create({
       line_items,
@@ -65,6 +65,7 @@ export async function POST() {
       success_url: `${origin}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/checkout`,
       client_reference_id: user.id,
+      metadata: { supabase_user_id: user.id },
     })
 
     if (!session.url) {

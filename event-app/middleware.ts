@@ -12,7 +12,7 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Skip static assets (including video) so locale middleware does not rewrite /videos/*.mp4
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|mp4|webm|mov|m4v|ogg)$).*)',
+    // Skip /api (Stripe webhooks, etc.), static assets, and video so intl/auth middleware does not rewrite them
+    '/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|mp4|webm|mov|m4v|ogg)$).*)',
   ],
 }
