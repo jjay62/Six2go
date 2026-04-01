@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "dev": "npm --prefix event-app run dev",
+    "build": "npm --prefix event-app run build",
+    "start": "npm --prefix event-app run start",
+    "lint": "npm --prefix event-app run lint"
   },
   "dependencies": {
     "next": "16.2.0",

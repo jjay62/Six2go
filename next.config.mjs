@@ -1,7 +1,7 @@
-import createNextIntlPlugin from 'next-intl/plugin';
+import createNextIntlPlugin from 'next-intl/plugin'
 
-
-const withNextIntl = createNextIntlPlugin();
+// Request config lives in the submodule app; required if anything loads this root config.
+const withNextIntl = createNextIntlPlugin('./i18n/request.ts')
 
 const nextConfig = {};
 
