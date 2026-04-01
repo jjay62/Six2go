@@ -5,7 +5,7 @@ import Hero from '@/components/hero';
 import { CashIcon, RaceCarIcon, QuestionIcon } from '@/components/icons';
 import './globals.css';
 import FoodItem from '@/components/fooditem';
-import { supabase } from '@/app/[locale]/lib/supabase'
+import { createClient } from '@/app/[locale]/lib/server'
 import AboutSection from '@/components/aboutsection';
 import TopChoices from '@/components/topchoices';
 import SmallMenu from '@/components/smallmenu';
@@ -14,6 +14,7 @@ import { getTranslations } from 'next-intl/server';
 
 
 export default async function Home() {
+  const supabase = await createClient()
   const t = await getTranslations('Cards');
 
   const cards = [

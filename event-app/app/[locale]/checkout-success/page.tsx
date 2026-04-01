@@ -1,10 +1,10 @@
-import { redirect } from 'next/navigation'
+import { getLocale, getTranslations } from 'next-intl/server'
+import { redirect } from '@/i18n/navigation'
 import { stripe } from '@/app/[locale]/lib/stripe'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Link from 'next/link'
 import Image from 'next/image'
-import { getTranslations } from 'next-intl/server'
 
 export default async function Success({
   searchParams,
@@ -19,11 +19,11 @@ export default async function Success({
   const {
     status,
   } = await stripe.checkout.sessions.retrieve(session_id, {
-    expand: ['line_items', 'payment_intent']
+    expand: ['line_items', 'payment_intent'],
   })
 
   if (status === 'open') {
-    return redirect('/')
+    redirect({ href: '/', locale: await getLocale() })
   }
 
   const t = await getTranslations('CheckoutSuccess')
@@ -32,23 +32,24 @@ export default async function Success({
     return (
       <>
         <Header />
-          <div className="flex flex-col items-center justify-center mt-30 mb-40">
-            <div className="text-center mb-8">
+        <div className="flex flex-col items-center justify-center mt-30 mb-40">
+          <div className="text-center mb-8">
             <Image src="/logooooo.png" alt="six2go" width={200} height={10} />
-            </div>
+          </div>
           <h1 className="text-3xl font-bold mb-6">{t('title')}</h1>
-          <p className="text-white/80 mb-8">
-          {t('description')}
-          </p>
+          <p className="text-white/80 mb-8">{t('description')}</p>
 
           <div className="text-center mt-4">
-          <Link href="/" className="text-sm text-[#2992CF] hover:text-blue-700 hover:underline">
-            {t('backToHome')}
-          </Link>
-        </div>
+            <Link
+              href="/"
+              className="text-sm text-[#2992CF] hover:text-blue-700 hover:underline"
+            >
+              {t('backToHome')}
+            </Link>
+          </div>
         </div>
         <Footer />
       </>
-    );
+    )
   }
 }

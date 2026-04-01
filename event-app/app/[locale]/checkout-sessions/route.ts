@@ -65,6 +65,7 @@ export async function POST() {
       success_url: `${origin}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/checkout`,
       client_reference_id: user.id,
+      metadata: { supabase_user_id: user.id },
     })
 
     if (!session.url) {

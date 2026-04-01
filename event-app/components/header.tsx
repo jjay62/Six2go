@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { createClient } from '@/app/[locale]/lib/server'
-import { redirect } from 'next/navigation'
+import { getLocale } from 'next-intl/server'
+import { redirect } from '@/i18n/navigation'
 import Image from 'next/image'
 import { CartIcon } from './cartIcon'
 import { getTranslations } from 'next-intl/server'
@@ -19,7 +20,7 @@ async function signOut() {
   'use server'
   const supabase = await createClient()
   await supabase.auth.signOut()
-  redirect('/login')
+  redirect({ href: '/login', locale: await getLocale() })
 }
 
 const Header = async () => {
