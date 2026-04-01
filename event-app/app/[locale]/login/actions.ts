@@ -1,7 +1,8 @@
 'use server'
 
 import { revalidatePath } from 'next/cache'
-import { redirect } from 'next/navigation'
+import { getLocale } from 'next-intl/server'
+import { redirect } from '@/i18n/navigation'
 import { createClient } from '@/app/[locale]/lib/server'
 
 export async function login(formData: FormData) {
@@ -13,11 +14,17 @@ export async function login(formData: FormData) {
   })
 
   if (error) {
-    redirect('/login?error=' + encodeURIComponent('Login failed, please try again'))
+    redirect({
+      href: {
+        pathname: '/login',
+        query: { error: 'Login failed, please try again' },
+      },
+      locale: await getLocale(),
+    })
   }
 
   revalidatePath('/', 'layout')
-  redirect('/')
+  redirect({ href: '/', locale: await getLocale() })
 }
 
 export async function signup(formData: FormData) {
@@ -29,9 +36,15 @@ export async function signup(formData: FormData) {
   })
 
   if (error) {
-    redirect('/login?error=' + encodeURIComponent('Signup failed. Please try again.'))
+    redirect({
+      href: {
+        pathname: '/login',
+        query: { error: 'Signup failed. Please try again.' },
+      },
+      locale: await getLocale(),
+    })
   }
 
   revalidatePath('/', 'layout')
-  redirect('/')
+  redirect({ href: '/', locale: await getLocale() })
 }

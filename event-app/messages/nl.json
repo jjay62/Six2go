@@ -113,7 +113,7 @@
     "requestFailed": "Verzoek mislukt"
   },
   "CheckoutSuccess": {
-    "title": "Bestelling geslaagd",
+    "title": "Bestelling voltooid",
     "description": "Bedankt voor je bestelling bij six2go! We sturen het zo snel mogelijk.",
     "backToHome": "Terug naar home"
   },

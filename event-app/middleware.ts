@@ -1,5 +1,5 @@
 import { type NextRequest } from 'next/server'
-import { updateSession } from '@/app/[locale]/lib/proxy'
+import { updateSession } from '@/app/[locale]/lib/middleware'
 import createIntlMiddleware from 'next-intl/middleware'
 import { routing } from '@/i18n/routing'
 

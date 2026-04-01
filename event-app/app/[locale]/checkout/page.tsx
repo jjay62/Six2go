@@ -7,7 +7,8 @@ import {
   decrease,
   remove,
 } from '@/app/[locale]/actions/cart'
-import { redirect } from 'next/navigation'
+import { getLocale } from 'next-intl/server'
+import { redirect } from '@/i18n/navigation'
 import Link from 'next/link'
 import CheckoutButton from '@/components/checkoutbutton'
 import { getTranslations } from 'next-intl/server'
@@ -17,7 +18,8 @@ export default async function CheckoutPage() {
   const { data: { user } } = await supabase.auth.getUser()
 
   if (!user) {
-    redirect('/login')
+    redirect({ href: '/login', locale: await getLocale() })
+    throw new Error('UNREACHABLE')
   }
 
   const { data: cartItems, error: cartError } = await supabase

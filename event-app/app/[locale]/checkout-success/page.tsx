@@ -1,10 +1,10 @@
-import { redirect } from 'next/navigation'
+import { getLocale, getTranslations } from 'next-intl/server'
+import { redirect } from '@/i18n/navigation'
 import { stripe } from '@/app/[locale]/lib/stripe'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Link from 'next/link'
 import Image from 'next/image'
-import { getTranslations } from 'next-intl/server'
 
 export default async function Success({
   searchParams,
@@ -23,7 +23,7 @@ export default async function Success({
   })
 
   if (status === 'open') {
-    return redirect('/')
+    redirect({ href: '/', locale: await getLocale() })
   }
 
   const t = await getTranslations('CheckoutSuccess')
