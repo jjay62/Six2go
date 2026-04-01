@@ -7,7 +7,7 @@ const Hero = async () => {
     <>
 <section className="relative min-h-[100vh] flex items-start pt-60 justify-center overflow-hidden">
 
-      <div className="max-w-7xl mx-auto text-center relative z-10">
+      <div className="max-w-7xl mt-16 text-center relative z-10">
         <h1 className="text-4xl sm:text-7xl font-bold tracking-tight animate-color-shift text-[#2992CF]">
           {t('title')}
         </h1>
