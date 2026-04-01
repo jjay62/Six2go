@@ -1,0 +1,160 @@
+{
+  "Header": {
+    "scrollingText": "NU ZIJN ALLE DESSERTEN EN BIJGERECHTEN €6,50",
+    "home": "Home",
+    "menu": "Menu",
+    "about": "Over ons",
+    "signOut": "Uitloggen",
+    "logIn": "Inloggen",
+    "orderNow": "Nu bestellen",
+    "language": "Taal"
+  },
+  "Hero": {
+    "title": "SIX2GO",
+    "description": "Bestel wat je wilt, wanneer je wilt. Bij jou bezorgd.",
+    "menubutton": "Bestel nu"
+  },
+  "Footer": {
+    "siteMap": "Sitemap",
+    "home": "Home",
+    "menu": "Menu",
+    "about": "Over ons",
+    "loginSignup": "Inloggen / Registreren",
+    "contact": "Contact",
+    "legal": "Juridisch",
+    "privacyPolicy": "Privacybeleid",
+    "madeBy": "gemaakt met ❤️ door jay62."
+  },
+  "AboutSection": {
+    "title": "Over six2go",
+    "description": "Het eten van six2go werd door velen gedroomd maar nooit gemaakt, tot nu. Wij zijn een klein team van voedselliefhebbers die gepassioneerd zijn over eten en wij zijn hier om jou de beste eetervaring te geven die je ooit hebt gehad en ooit zal hebben.",
+    "createdBy": "gemaakt door: Jay62",
+    "learnMore": "Lees meer over ons"
+  },
+  "AboutPage": {
+    "title": "Over six2go",
+    "founded": "Opgericht in 2026 door Jay62",
+    "storyHeading": "Ons verhaal",
+    "storyP1": "six2go begon met een simpel idee: topkwaliteit eten, bezorgd aan jouw deur, voor prijzen die je portemonnee niet leegmaken. Onze Michelin-ster koks bereiden elk gerecht met liefde, geïnspireerd door keukens van over de hele wereld — van Italiaanse houtgestookte pizza's tot Japans geïnspireerde desserts.",
+    "storyP2": "Wat begon als een klein keukenexperiment is uitgegroeid tot een merk dat door voedselliefhebbers overal wordt vertrouwd. Wij geloven dat goed eten verhalen creëert, en elk bord dat wij serveren is een nieuw hoofdstuk.",
+    "missionHeading": "Onze missie",
+    "missionP": "Restaurantkwaliteit maaltijden toegankelijk maken voor iedereen — of je nu een gezin van zes voedt of snel alleen iets eet. Verse ingrediënten, snelle bezorging, geen compromissen.",
+    "howItWorksHeading": "Hoe het werkt",
+    "howStep1": "Blader door ons menu en kies je favorieten.",
+    "howStep2": "Voeg ze toe aan je winkelwagen en ga naar de kassa.",
+    "howStep3": "Betaal veilig online — wij regelen de rest.",
+    "howStep4": "Achterover leunen en wachten tot Max je bestelling met topsnelheid bezorgt.",
+    "whyHeading": "Waarom six2go?",
+    "whyPoint1": "Gerechten uit 6+ keukens van over de hele wereld.",
+    "whyPoint2": "Prijzen vanaf slechts een paar euro.",
+    "whyPoint3": "Bezorging door een echte Formule 1-coureur (oké, misschien niet letterlijk).",
+    "whyPoint4": "Geen abonnement — bestel wanneer je wilt, zoals je wilt."
+  },
+  "TopChoices": {
+    "title": "Onze topkeuzes",
+    "description": "De absolute topkeuzes van onze chef voor jou. Van handtekentechnieken tot lokaal geproduceerde schatten, onze chef heeft het menu teruggebracht tot deze uitstekende essentials die onze culinaire filosofie bepalen."
+  },
+  "Faq": {
+    "title": "Veelgestelde vragen",
+    "q1": "In welke gebieden bezorgen jullie?",
+    "a1": "We bezorgen momenteel door heel Nederland en breiden binnenkort uit naar meer EU-landen.",
+    "q2": "Hoe lang duurt de bezorging?",
+    "a2": "De meeste bestellingen arriveren binnen 30–45 minuten. Max rijdt snel.",
+    "q3": "Kan ik mijn bestelling annuleren of wijzigen?",
+    "a3": "Je kunt je bestelling binnen 5 minuten na het plaatsen aanpassen. Daarna is de keuken er al mee bezig.",
+    "q4": "Is er een minimumbestelling?",
+    "a4": "Nee. Zelfs een enkel dessert telt — wij oordelen niet.",
+    "q5": "Hoe neem ik contact op met support?",
+    "a5": "Stuur ons een e-mail naar jayklav62@gmail.com of bel (+31) 0633376647. We helpen je graag."
+  },
+  "Cards": {
+    "card1Title": "Waarom wij?",
+    "card1Desc": "Goedkope en wereldwijde voedselopties.",
+    "card2Title": "Is het snel?",
+    "card2Desc": "100% — we hebben Max Verstappen als onze chauffeur.",
+    "card3Title": "Waarom zou ik hier ooit bestellen?",
+    "card3Desc": "Iedereen houdt van eten en wil Max ontmoeten, toch?"
+  },
+  "Menu": {
+    "title": "Onze gerechten",
+    "description": "Ontdek onze favoriete gerechten, gemaakt met liefde en zorg.",
+    "all": "Alles",
+    "mealDeals": "Maaltijddeals",
+    "burgers": "Burgers",
+    "sides": "Bijgerechten",
+    "pizzas": "Pizza's",
+    "pastas": "Pasta's",
+    "desserts": "Desserts",
+    "drinks": "Dranken",
+    "ourChoices": "Onze keuzes",
+    "previous": "Vorige",
+    "next": "Volgende",
+    "page": "Pagina",
+    "of": "van"
+  },
+  "FoodItem": {
+    "addToCart": "Toevoegen",
+    "outOfStock": "Uitverkocht",
+    "viewDetails": "Bekijk details"
+  },
+  "Checkout": {
+    "title": "🛒 Jouw winkelwagen 🛒",
+    "yourCart": "Jouw winkelwagen",
+    "emptyCart": "Je maag is leeg😭. Voeg iets toe aan je winkelwagen om hem te vullen.",
+    "itemNotFound": "artikel niet gevonden",
+    "remove": "Verwijderen",
+    "total": "Totaal",
+    "backToHome": "← Terug naar home"
+  },
+  "CheckoutButton": {
+    "loading": "laden…",
+    "checkout": "afrekenen",
+    "noUrl": "Geen checkout-URL ontvangen",
+    "requestFailed": "Verzoek mislukt"
+  },
+  "CheckoutSuccess": {
+    "title": "Bestelling geslaagd",
+    "description": "Bedankt voor je bestelling bij six2go! We sturen het zo snel mogelijk.",
+    "backToHome": "Terug naar home"
+  },
+  "Login": {
+    "bannerText": "om te bestellen bij six2go moet je inloggen of een account aanmaken",
+    "dismiss": "x",
+    "dismissError": "Fout sluiten",
+    "dismissMessage": "Bericht sluiten",
+    "signIn": "Inloggen",
+    "createAccount": "Account aanmaken",
+    "welcomeBack": "Welkom terug",
+    "createYourAccount": "Maak je account aan",
+    "subtitleLogin": "Vul je e-mailadres en wachtwoord in om in te loggen.",
+    "subtitleSignup": "Vul je e-mailadres in en kies een wachtwoord (minimaal 6 tekens).",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "jay@six2go.com",
+    "passwordLabel": "Wachtwoord",
+    "passwordPlaceholder": "********",
+    "backToHome": "Terug naar home"
+  },
+  "NotFound": {
+    "title": "404 - je bent op een pagina beland die niet bestaat",
+    "description": "De pagina die je zoekt bestaat niet.",
+    "backToHome": "Terug naar de startpagina"
+  },
+  "Privacy": {
+    "title": "Privacybeleid",
+    "lastUpdated": "Laatst bijgewerkt: maart 2026",
+    "intro": "Dit is een tijdelijk privacybeleid. SIX2GO respecteert jouw privacy en zet zich in voor de bescherming van jouw persoonlijke gegevens.",
+    "collectHeading": "Welke informatie verzamelen we",
+    "collectText": "We kunnen informatie verzamelen die je verstrekt bij registratie, het abonneren op onze nieuwsbrief of contact opnemen. Dit kan je naam, e-mailadres en voorkeuren omvatten.",
+    "useHeading": "Hoe we jouw informatie gebruiken",
+    "useText": "We gebruiken jouw informatie om diensten te verlenen, ons platform te verbeteren en met jou te communiceren over evenementen en updates.",
+    "contactHeading": "Contact",
+    "contactText": "Voor privacygerelateerde vragen, neem contact op via privacy@eventapp.example.com.",
+    "backToHome": "Terug naar Home"
+  },
+  "ProductDetail": {
+    "category": "Artikelcategorie:",
+    "reviews": "| beoordelingen: ⭐⭐⭐⭐⭐",
+    "outOfStock": "Uitverkocht",
+    "leftInStock": "nog op voorraad"
+  }
+}

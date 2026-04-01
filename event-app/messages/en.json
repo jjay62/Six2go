@@ -1,0 +1,160 @@
+{
+  "Header": {
+    "scrollingText": "NOW ALL DESSERTS AND SIDES ARE €6,50",
+    "home": "Home",
+    "menu": "Menu",
+    "about": "About",
+    "signOut": "Sign out",
+    "logIn": "Log in",
+    "orderNow": "Order now",
+    "language": "Language"
+  },
+  "Hero": {
+    "title": "SIX2GO",
+    "description": "Order what you want, when you want. Delivered to you.",
+    "menubutton": "Order now"
+  },
+  "Footer": {
+    "siteMap": "Site Map",
+    "home": "Home",
+    "menu": "Menu",
+    "about": "About",
+    "loginSignup": "Login / Sign up",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "madeBy": "made by ❤️ jay62."
+  },
+  "AboutSection": {
+    "title": "About six2go",
+    "description": "six2go's food was dreamed by many but never created until now. We are a small team of food lovers who are passionate about food and we are here to bring you the best food experience you have ever had and will ever have.",
+    "createdBy": "created by: Jay62",
+    "learnMore": "Learn more about us"
+  },
+  "AboutPage": {
+    "title": "About six2go",
+    "founded": "Founded in 2026 by Jay62",
+    "storyHeading": "Our story",
+    "storyP1": "six2go started with a simple idea: world-class food, delivered to your door, at prices that won't empty your wallet. Our Michelin-star chefs craft every dish with love, drawing inspiration from cuisines across the globe — from Italian wood-fired pizzas to Japanese-inspired desserts.",
+    "storyP2": "What began as a small kitchen experiment has grown into a brand trusted by food lovers everywhere. We believe great food creates stories, and every plate we serve is a new chapter.",
+    "missionHeading": "Our mission",
+    "missionP": "To make restaurant-quality meals accessible to everyone — whether you're feeding a family of six or grabbing a quick solo bite. Fresh ingredients, fast delivery, zero compromises.",
+    "howItWorksHeading": "How it works",
+    "howStep1": "Browse our menu and pick your favourites.",
+    "howStep2": "Add them to your cart and head to checkout.",
+    "howStep3": "Pay securely online — we handle the rest.",
+    "howStep4": "Sit back and wait for Max to deliver your order at top speed.",
+    "whyHeading": "Why six2go?",
+    "whyPoint1": "Dishes from 6+ cuisines around the world.",
+    "whyPoint2": "Prices starting from just a few euros.",
+    "whyPoint3": "Delivery powered by an actual Formula 1 driver (okay, maybe not literally).",
+    "whyPoint4": "No subscription — order when you want, how you want."
+  },
+  "TopChoices": {
+    "title": "Our top choices",
+    "description": "Our chef's top supurb choices for you. From signature techniques to locally sourced treasures, our chef has narrowed down the menu to these superb essentials that define our culinary philosophy."
+  },
+  "Faq": {
+    "title": "FAQ",
+    "q1": "What areas do you deliver to?",
+    "a1": "We currently deliver across the Netherlands and are expanding to more EU countries soon.",
+    "q2": "How long does delivery take?",
+    "a2": "Most orders arrive within 30–45 minutes. Max drives fast.",
+    "q3": "Can I cancel or change my order?",
+    "a3": "You can modify your order within 5 minutes of placing it. After that, the kitchen is already on it.",
+    "q4": "Is there a minimum order?",
+    "a4": "Nope. Even a single dessert counts — we don't judge.",
+    "q5": "How do I contact support?",
+    "a5": "Drop us an email at jayklav62@gmail.com or call (+31) 0633376647. We're here to help."
+  },
+  "Cards": {
+    "card1Title": "Why us?",
+    "card1Desc": "Cheap and all around the world food options.",
+    "card2Title": "Is it fast?",
+    "card2Desc": "100% we got Max Verstappen as our driver.",
+    "card3Title": "Why would I ever order from here?",
+    "card3Desc": "everyone loves food and wants to meet Max right?"
+  },
+  "Menu": {
+    "title": "Our dishes",
+    "description": "Explore our favourite dishes, made with love and care.",
+    "all": "All",
+    "mealDeals": "Meal Deals",
+    "burgers": "Burgers",
+    "sides": "Sides",
+    "pizzas": "Pizzas",
+    "pastas": "Pastas",
+    "desserts": "Desserts",
+    "drinks": "Drinks",
+    "ourChoices": "Our choices",
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page",
+    "of": "of"
+  },
+  "FoodItem": {
+    "addToCart": "Add to Cart",
+    "outOfStock": "Out of Stock",
+    "viewDetails": "View details"
+  },
+  "Checkout": {
+    "title": "🛒 Your Cart List 🛒",
+    "yourCart": "Your Cart",
+    "emptyCart": "Your stomach is empty😭. add something to your cart to fill it up.",
+    "itemNotFound": "item not found",
+    "remove": "Remove",
+    "total": "Total",
+    "backToHome": "← Back to home"
+  },
+  "CheckoutButton": {
+    "loading": "loading…",
+    "checkout": "checkout",
+    "noUrl": "No checkout URL returned",
+    "requestFailed": "Request failed"
+  },
+  "CheckoutSuccess": {
+    "title": "Order successful",
+    "description": "Thanks for ordering from six2go! We will send it as soon as possible.",
+    "backToHome": "Back to home"
+  },
+  "Login": {
+    "bannerText": "to order at six2go, you need to login or create an account",
+    "dismiss": "x",
+    "dismissError": "Dismiss error",
+    "dismissMessage": "Dismiss message",
+    "signIn": "Sign In",
+    "createAccount": "Create Account",
+    "welcomeBack": "Welcome back",
+    "createYourAccount": "Create your account",
+    "subtitleLogin": "Enter your email and password to sign in.",
+    "subtitleSignup": "Enter your email and choose a password (min. 6 characters).",
+    "emailLabel": "Email",
+    "emailPlaceholder": "jay@six2go.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "********",
+    "backToHome": "Back to home"
+  },
+  "NotFound": {
+    "title": "404 - you have stumbled upon a page that does not exist",
+    "description": "The page you are looking for does not exist.",
+    "backToHome": "Go back to the home page"
+  },
+  "Privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: March 2026",
+    "intro": "This is a placeholder privacy policy. SIX2GO respects your privacy and is committed to protecting your personal data.",
+    "collectHeading": "Information We Collect",
+    "collectText": "We may collect information you provide when registering, subscribing to our newsletter, or contacting us. This may include your name, email address, and preferences.",
+    "useHeading": "How We Use Your Information",
+    "useText": "We use your information to provide services, improve our platform, and communicate with you about events and updates.",
+    "contactHeading": "Contact",
+    "contactText": "For privacy-related questions, contact us at privacy@eventapp.example.com.",
+    "backToHome": "Back to Home"
+  },
+  "ProductDetail": {
+    "category": "Item category:",
+    "reviews": "| reviews: ⭐⭐⭐⭐⭐",
+    "outOfStock": "Out of stock",
+    "leftInStock": "in stock"
+  }
+}
