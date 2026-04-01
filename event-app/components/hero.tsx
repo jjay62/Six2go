@@ -5,7 +5,6 @@ const Hero = async () => {
   const t = await getTranslations('Hero');
   return (
     <>
-    {/*s*/}
 <section className="relative min-h-[100vh] flex items-start pt-60 justify-center overflow-hidden">
 
       <div className="max-w-7xl mx-auto text-center relative z-10">
