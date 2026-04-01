@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "npm --prefix event-app run dev",
-    "build": "npm --prefix event-app run build",
+    "build": "npm --prefix event-app run build && node scripts/sync-next-build.cjs",
     "start": "npm --prefix event-app run start",
     "lint": "npm --prefix event-app run lint"
   },
