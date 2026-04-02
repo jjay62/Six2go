@@ -1,5 +1,7 @@
+'use client'
+
 import React from 'react'
-import AddToCartBtn from './addToCartBtn';
+import AddToCartBtn from './addToCartBtn'
 import ViewBtn from './viewBtn';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';

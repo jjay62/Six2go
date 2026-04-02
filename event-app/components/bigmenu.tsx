@@ -8,6 +8,7 @@ interface MenuItem {
   id: number;
   title: string;
   desc: string;
+  desc_nl: string;
   image: string;
   price: number;
   stock: number;
