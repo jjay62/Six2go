@@ -5,14 +5,14 @@ import BtnSM from './btnsm';
 import { useTranslations } from 'next-intl';
 
 interface MenuItem {
-  id: number;
-  title: string;
-  desc: string;
-  desc_nl: string;
-  image: string;
-  price: number;
-  stock: number;
-  categories: string[];
+  id: number
+  title: string
+  desc: string
+  desc_nl?: string | null
+  image: string
+  price: number
+  stock: number
+  categories: string[]
 }
 
 interface BigMenuProps {

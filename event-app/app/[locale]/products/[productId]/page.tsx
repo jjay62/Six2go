@@ -41,7 +41,9 @@ export default async function ProductDetails({
           <p className="text-white/80 mb-8 border-b border-white/20 pb-2 ">
             {t('category')} &nbsp; {product.categories} {t('reviews')}
           </p>
-          <p className="text-white/80 mb-4">{`${locale === 'nl' ? product.desc_nl : product.desc}`}</p>
+          <p className="text-white/80 mb-4">
+            {locale === 'nl' ? (product.desc_nl ?? product.desc) : product.desc}
+          </p>
           <p className="text-white/90 font-bold text-2xl mb-8">
             €{price.toFixed(2)}{' '}
             {product.oldprice === 0 ? null :(
