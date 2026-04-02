@@ -7,14 +7,14 @@ import { useTranslations } from 'next-intl';
 type Category = 'Our choices' | 'Meal Deals' | 'Burgers' | 'Pizzas' | 'Pastas' | 'Desserts' | 'Drinks';
 
 interface MenuItem {
-  id: number;
-  title: string;
-  desc: string;
-  desc_nl: string;
-  image: string;
-  price: number;
-  stock: number;
-  categories: string[];
+  id: number
+  title: string
+  desc: string
+  desc_nl?: string | null
+  image: string
+  price: number
+  stock: number
+  categories: string[]
 }
 
 interface SmallMenuProps {
