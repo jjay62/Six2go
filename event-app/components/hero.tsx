@@ -15,7 +15,7 @@ const Hero = async () => {
           {t('description')}
         </p>
         <div className="mt-10 flex flex-row gap-4 justify-center items-center flex-wrap">
-          <Link href="/menu" className="px-5 py-3 bg-[#2992CF] text-white rounded-md font-bold hover:bg-[#29709E] transition-all duration-200">
+          <Link href="/menu" className="px-5 py-3 bg-[#2992CF] text-white rounded-md font-bold hover:bg-[#29709E] hover:scale-105 transition-all duration-200">
           {t('menubutton')}</Link>
         </div>
       </div>

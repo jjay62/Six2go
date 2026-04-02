@@ -3,7 +3,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 
 /**
  * Refreshes the Supabase session and merges auth cookies into `response`.
- * Pass the response from next-intl (or other middleware) so redirects/rewrites stay intact.
+ * Pass the response from next-intl (or other proxy layer) so redirects/rewrites stay intact.
  */
 export async function updateSession(
   request: NextRequest,
