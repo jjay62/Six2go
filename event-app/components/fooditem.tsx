@@ -3,8 +3,8 @@
 import React from 'react'
 import AddToCartBtn from './addToCartBtn'
 import ViewBtn from './viewBtn';
-import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
+import Link from 'next/link';
 interface FoodItemProps {
   id: number
   title: string
@@ -26,28 +26,31 @@ const FoodItem = ({
   oldprice,
   desc_nl,
 }: FoodItemProps) => {
-  const t = useTranslations('FoodItem')
   const locale = useLocale()
   const description = locale === 'nl' ? (desc_nl ?? desc) : desc
   return (
 <>
+<Link href={`/products/${id}`}>
+<div>
     <div className="bg-gray-900 rounded-lg text-white border border-transparent hover:border-gray-600 hover:shadow-lg transition-all duration-200 cursor-pointer overflow-hidden flex flex-col h-[360px] w-full text-center">
-      <img src={image} alt={""} className="w-full h-40 object-cover" />
-      <div className="p-4 flex flex-col gap-2 flex-1 overflow-hidden">
+      <Link href={`/products/${id}`}>
+        <img src={image} alt={""} className="w-full h-40 object-cover" />
+      </Link>
+      <div className="p-4 flex flex-col gap-2 flex-1 overflow-hidden">        
         <h2 className="text-lg font-bold text-center truncate ">{title}</h2>
-        <p className="text-white/90 text-sm line-clamp-2">{description}</p>
-        <div className="mt-auto flex flex-col gap-2">
-          <p className="font-semibold text-center tracking-wide">€{price.toFixed(2)}</p>
+        <p className="text-white/90 text-sm line-clamp-2">{description}</p>       
+        <div className="mt-auto flex flex-col gap-2">       
+          <p className="font-semibold text-center tracking-wide">€{price.toFixed(2)}</p>        
+          </div>
           <div className="grid grid-cols-2 gap-2">
           <AddToCartBtn menuItemId={id} disabled={stock <= 0} />
           <ViewBtn menuItemId={id} />
-          
-          
           </div>
-        </div>
-      </div>
-    </div>
-</>
+          </div>
+          </div> 
+          </div>
+          </Link>
+          </>
   )
 }
 

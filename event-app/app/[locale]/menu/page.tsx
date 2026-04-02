@@ -1,7 +1,7 @@
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import BigMenu from '@/components/bigmenu';
-import { createClient } from '@/app/[locale]/lib/server'
+import { createClient } from '@/lib/server'
 
 export default async function MenuPage() {
   const supabase = await createClient()

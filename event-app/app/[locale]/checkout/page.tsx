@@ -1,12 +1,12 @@
 import React from 'react'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import { createClient } from '@/app/[locale]/lib/server'
+import { createClient } from '@/lib/server'
 import {
   increase,
   decrease,
   remove,
-} from '@/app/[locale]/actions/cart'
+} from '@/actions/cart'
 import { getLocale } from 'next-intl/server'
 import { redirect } from '@/i18n/navigation'
 import Link from 'next/link'

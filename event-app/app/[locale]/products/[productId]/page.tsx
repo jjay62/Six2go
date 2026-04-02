@@ -2,7 +2,7 @@ import React from 'react'
 import { notFound } from 'next/navigation'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import { createClient } from '@/app/[locale]/lib/server'
+import { createClient } from '@/lib/server'
 import BigAddToCartBtn from '@/components/bigAddToCartBtn'
 import { getLocale, getTranslations } from 'next-intl/server'
 

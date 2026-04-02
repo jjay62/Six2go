@@ -5,7 +5,7 @@ import Hero from '@/components/hero';
 import { CashIcon, RaceCarIcon, QuestionIcon } from '@/components/icons';
 import './globals.css';
 import FoodItem from '@/components/fooditem';
-import { createClient } from '@/app/[locale]/lib/server'
+import { createClient } from '@/lib/server'
 import AboutSection from '@/components/aboutsection';
 import TopChoices from '@/components/topchoices';
 import SmallMenu from '@/components/smallmenu';

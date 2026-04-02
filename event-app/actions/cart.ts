@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache'
 import { getLocale } from 'next-intl/server'
 import { redirect } from '@/i18n/navigation'
-import { createClient } from '@/app/[locale]/lib/server'
+import { createClient } from '@/lib/server'
 
 function revalidateCartPages() {
   revalidatePath('/' ,'layout')
@@ -34,14 +34,12 @@ export async function addToCart(menuItemId: number) {
     .maybeSingle()
 
   if (existing) {
-    // increase quantity
     await supabase
       .from('cart_items')
       .update({ quantity: existing.quantity + 1 })
       .eq('id', existing.id)
       .eq('user_id', user.id)
   } else {
-    // insert new item
     await supabase
       .from('cart_items')
       .insert({
