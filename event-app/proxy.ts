@@ -5,7 +5,7 @@ import { routing } from '@/i18n/routing'
 
 const intlMiddleware = createMiddleware(routing)
 
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const intlResponse = intlMiddleware(request)
   return updateSession(request, intlResponse)
 }
