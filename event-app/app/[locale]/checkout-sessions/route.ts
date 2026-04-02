@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { headers } from 'next/headers'
-import { createClient } from '@/app/[locale]/lib/server'
-import { stripe } from '@/app/[locale]/lib/stripe'
+import { createClient } from '@/lib/server'
+import { stripe } from '@/lib/stripe'
 
 type MenuItemJoin = { title?: string | null; price?: number | null } | null
 

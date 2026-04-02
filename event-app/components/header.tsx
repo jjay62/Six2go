@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { createClient } from '@/app/[locale]/lib/server'
+import { createClient } from '@/lib/server'
 import { getLocale } from 'next-intl/server'
 import { redirect } from '@/i18n/navigation'
 import Image from 'next/image'

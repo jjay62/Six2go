@@ -1,5 +1,5 @@
 'use client'
-import { addToCart } from "@/app/[locale]/actions/cart";
+import { addToCart } from "@/actions/cart";
 import { ShoppingCartIcon } from "./icons";
 import { useTranslations } from 'next-intl';
 

@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server'
 import { headers } from 'next/headers'
 import type Stripe from 'stripe'
 
-import { stripe } from '@/app/[locale]/lib/stripe'
-import { createAdminClient } from '@/app/[locale]/lib/admin'
+import { stripe } from '@/lib/stripe'
+import { createAdminClient } from '@/lib/admin'
 
 export async function fulfillCheckoutSession(session: Stripe.Checkout.Session) {
   if (session.status !== 'complete') {
