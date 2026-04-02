@@ -4,7 +4,6 @@ import Card from '@/components/card';
 import Faqsection from '@/components/faqsection';
 import { CashIcon, RaceCarIcon, QuestionIcon } from '@/components/icons';
 import { getTranslations } from 'next-intl/server';
-
 export default async function AboutPage() {
   const t = await getTranslations('AboutPage');
   const tc = await getTranslations('Cards');
@@ -19,8 +18,8 @@ export default async function AboutPage() {
     <div>
       <Header />
       <main className="max-w-3xl mx-auto px-6 py-12">
-        <h1 className="text-3xl font-bold mb-2">{t('title')}</h1>
-        <p className="text-white/50 mb-8">{t('founded')}</p>
+        <h1 className="text-3xl font-bold mt-10 mb-2 text-center text-blue-600">{t('title')}</h1>
+        <p className="text-white/50 mb-8 text-center text-gray-500/20">{t('founded')}</p>
 
         <section className="space-y-4 text-white/90 border-b border-white/20 pb-8 mb-8">
           <h2 className="text-xl font-semibold">{t('storyHeading')}</h2>

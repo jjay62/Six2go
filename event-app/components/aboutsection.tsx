@@ -20,7 +20,7 @@ const AboutSection = async () => {
             <p className="mb-6 text-gray-200 leading-relaxed">
               {t('description')}<br /><br />{t('createdBy')}
             </p>
-            <Link href="/about" className="bg-blue-900 text-white p-3 rounded-md text-sm hover:bg-blue-950">{t('learnMore')}</Link>
+            <Link href="/about" className="bg-blue-900 text-white p-3 rounded-md text-sm hover:bg-blue-950 hover:scale-105 transition-all duration-200">{t('learnMore')}</Link>
           </div>
         </div>
       </div>

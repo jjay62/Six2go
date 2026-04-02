@@ -4,7 +4,7 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import { createClient } from '@/app/[locale]/lib/server'
 import BigAddToCartBtn from '@/components/bigAddToCartBtn'
-import { getTranslations } from 'next-intl/server'
+import { getLocale, getTranslations } from 'next-intl/server'
 
 export default async function ProductDetails({
   params,
@@ -26,7 +26,7 @@ export default async function ProductDetails({
 
   const t = await getTranslations('ProductDetail')
   const price = Number(product.price ?? 0)
-
+  const locale = await getLocale()
   return (
     <>
       <Header />
@@ -41,16 +41,13 @@ export default async function ProductDetails({
           <p className="text-white/80 mb-8 border-b border-white/20 pb-2 ">
             {t('category')} &nbsp; {product.categories} {t('reviews')}
           </p>
-          <p className="text-white/80 mb-4">{product.desc}</p>
+          <p className="text-white/80 mb-4">{`${locale === 'nl' ? product.desc_nl : product.desc}`}</p>
           <p className="text-white/90 font-bold text-2xl mb-8">
             €{price.toFixed(2)}{' '}
-            {product.oldprice != null ? (
+            {product.oldprice === 0 ? null :(
               <span className="text-white/50 line-through">
-                €{Number(product.oldprice).toFixed(2)}
-              </span>
-            ) : (
-              ''
-            )}
+                €{Number(product.oldprice).toFixed(2)} 
+              </span>)}
           </p>
           <p className="text-white/70 mb-10 ">
             {product.stock <= 0 ? t('outOfStock') : `${t('leftInStock')}`}
