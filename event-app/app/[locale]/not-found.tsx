@@ -5,9 +5,9 @@ import React from "react"
 import Image from "next/image"
 import { getTranslations } from 'next-intl/server'
 
-export default async function NotFoundPage() {
+export default async function NotFound() {
   const t = await getTranslations('NotFound')
-  return(
+  return (
     <>
     <Header />
     <div className="flex flex-col items-center justify-center mt-30 mb-40">

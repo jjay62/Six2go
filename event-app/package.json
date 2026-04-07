@@ -13,6 +13,8 @@
     "@stripe/stripe-js": "^9.0.0",
     "@supabase/ssr": "^0.9.0",
     "@supabase/supabase-js": "^2.100.0",
+    "atropos": "^2.0.2",
+    "motion": "^12.38.0",
     "next": "^16.2.0",
     "next-intl": "^4.8.3",
     "react": "19.2.4",
