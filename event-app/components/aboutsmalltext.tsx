@@ -1,7 +1,6 @@
 'use client'
 import { Link } from '@/i18n/navigation'
 import React from 'react'
-import { getTranslations } from 'next-intl/server'
 import { easeOut, motion } from 'motion/react'
 const AboutSmallText = ({ href, title, description, createdBy, learnMore }: { href: string, title: any, description: string, createdBy: string, learnMore: string }) => {
   return (

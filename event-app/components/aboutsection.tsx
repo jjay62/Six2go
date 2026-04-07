@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link } from '@/i18n/navigation'
 import { getTranslations } from 'next-intl/server'
 import PizzaCircle from './pizzacircle'
-import { motion, easeOut } from 'motion/react'
 import AboutSmallText from './aboutsmalltext'
 const AboutSection = async () => {
   const t = await getTranslations('AboutSection')
