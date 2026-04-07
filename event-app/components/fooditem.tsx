@@ -31,7 +31,7 @@ const FoodItem = ({
   return (
 <>
   
-    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0, transition: { duration: 2, ease: easeOut }}} whileHover={{ scale: 1.05, transition: { duration: 0.2 } }} whileTap={{ scale: 0.95, transition: { duration: 0.2 } }} viewport={{ once: true }}>
+    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0, transition: { duration: 1, ease: easeOut }}} whileHover={{ scale: 1.05, transition: { duration: 0.2 } }} whileTap={{ scale: 0.95, transition: { duration: 0.2 } }} viewport={{ once: true }}>
       <div className="bg-gray-900 rounded-lg text-white border border-transparent hover:border-gray-600 hover:shadow-lg transition-all duration-200 cursor-pointer overflow-hidden flex flex-col h-[360px] w-full text-center">
         <Link href={`/products/${id}`}>
         <img src={image} alt={""} className="w-full h-40 object-cover" />
