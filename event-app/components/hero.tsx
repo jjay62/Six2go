@@ -28,7 +28,7 @@ const Hero = async () => {
         <div className="mt-10 flex justify-center">
           <Link
             href="/menu"
-            className="px-6 py-3 bg-blue-500 text-white bg-blue-500 rounded-md font-bold hover:bg-blue-700 hover:scale-105 transition-all duration-200"
+            className="px-6 py-3 text-white bg-blue-500 rounded-md font-bold hover:bg-blue-700 hover:scale-105 transition-all duration-200"
           >
             {t('menubutton')}
           </Link>
