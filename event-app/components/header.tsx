@@ -76,7 +76,7 @@ const Header = async () => {
                 {t('logIn')}
               </Link>
             )}
-            <details className="sm:hidden relative shrink-0 rounded-md bg-blue-800 px-4 py-1 transition-colors hover:bg-blue-900 open:bg-blue-900 mx-2 md:ml-20 md:mr-8 z-50">
+            <details className="relative shrink-0 rounded-md bg-blue-800 px-4 py-1 transition-colors hover:bg-blue-900 open:bg-blue-900 mx-2 md:ml-20 md:mr-8 z-50">
               <summary className="tracking-wide cursor-pointer list-none whitespace-nowrap select-none marker:content-none [&::-webkit-details-marker]:hidden">
                 {t('language')}
               </summary>
