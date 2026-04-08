@@ -8,14 +8,14 @@ const Hero = async () => {
   return (
     <section className="relative h-[100svh] flex items-center justify-center">
       <video
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover opacity-90"
         autoPlay
         muted
         loop
         playsInline
         src="/videos/herovideo.mp4"
       />
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 " />
       <div className="relative z-10 text-center px-4 max-w-4xl">
         <h1 className="text-4xl sm:text-7xl font-bold tracking-tight text-blue-500">
           {t('title')}
