@@ -32,9 +32,6 @@ importers:
       stripe:
         specifier: ^21.0.1
         version: 21.0.1(@types/node@20.19.39)
-      supabase:
-        specifier: ^2.84.5
-        version: 2.88.0
     devDependencies:
       '@tailwindcss/postcss':
         specifier: ^4
@@ -54,6 +51,9 @@ importers:
       eslint-config-next:
         specifier: 16.2.0
         version: 16.2.0(@typescript-eslint/parser@8.58.1(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
+      supabase:
+        specifier: ^2.84.5
+        version: 2.88.0
       tailwindcss:
         specifier: ^4
         version: 4.2.2
