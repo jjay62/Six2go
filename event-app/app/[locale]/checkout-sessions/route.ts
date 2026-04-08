@@ -67,7 +67,7 @@ export async function POST() {
       client_reference_id: user.id,
       metadata: { supabase_user_id: user.id },
       shipping_address_collection: {
-        allowed_countries: ['NL'],
+        allowed_countries: ['NL', 'BE', 'DE', 'FR', 'IT', 'ES', 'PT', 'SE', 'NO', 'DK', 'FI', 'EE', 'LV', 'LT', 'PL', 'CZ', 'SK', 'RO', 'HU', 'BG', 'HR', 'SI', 'AL', 'MK', 'ME', 'BA', 'XK'],
       },
     })
 
