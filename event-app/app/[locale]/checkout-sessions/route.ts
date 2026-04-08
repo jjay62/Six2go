@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server'
 import { headers } from 'next/headers'
 import { createClient } from '@/lib/server'
-import { stripe } from '@/lib/stripe'
 
 type MenuItemJoin = { title?: string | null; price?: number | null } | null
 
@@ -14,8 +13,7 @@ export async function POST() {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-
-    const stripeInstance = require('stripe')(process.env.STRIPE_SECRET_KEY);
+    const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
     const { data: cartItems, error } = await supabase
       .from('cart_items')
@@ -42,12 +40,11 @@ export async function POST() {
       .filter((li) => li.price_data.unit_amount > 0)
 
     const headersList = await headers()
-    
     const origin = headersList.get('origin') || 
                    process.env.NEXT_PUBLIC_SITE_URL || 
-                   'https://sixtwogo.vercel.app';
+                   'https://sixtwogo.vercel.app'
 
-    const session = await stripeInstance.checkout.sessions.create({
+    const session = await stripe.checkout.sessions.create({
       line_items,
       mode: 'payment',
       success_url: `${origin}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
@@ -55,13 +52,16 @@ export async function POST() {
       client_reference_id: user.id,
       metadata: { supabase_user_id: user.id },
       shipping_address_collection: {
-        allowed_countries: ['NL']
+        allowed_countries: ['NL'],
       },
       shipping_options: [
         {
           shipping_rate_data: {
             type: 'fixed_amount',
-            fixed_amount: { amount: 0, currency: 'eur' },
+            fixed_amount: {
+              amount: 0,
+              currency: 'eur',
+            },
             display_name: 'Standard Delivery',
           },
         },
