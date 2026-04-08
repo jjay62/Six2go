@@ -1,3 +1,4 @@
+
 import Link from 'next/link'
 import { createClient } from '@/lib/server'
 import { getLocale } from 'next-intl/server'
@@ -33,9 +34,8 @@ const Header = async () => {
       <div className="flex w-full justify-center items-center text-bold text-1xl tracking-widest bg-blue-900 py-1.5">
         <h3 className="scrolling-text">{t('scrollingText')}</h3>
       </div>
-
       <div className="w-full border-b border-white/20 px-4 sm:px-6 py-4 text-white">
-        <div className="grid w-full grid-cols-3 items-center gap-2">
+        <div className="flex flex-col md:grid md:grid-cols-3 w-full items-center gap-4 md:gap-2">
           <Link href="/" className="flex w-fit items-center" aria-label="">
             <Image src="/logooooo.png" alt="six2go" width={120} height={10}/>
           </Link>
@@ -50,9 +50,10 @@ const Header = async () => {
             <Link href="/about" className="text-white hover:text-blue-500 text-lg hover:underline">
               {t('about')}
             </Link>
+            
           </nav>
 
-          <div className="flex min-w-0 flex-nowrap items-center justify-end justify-self-end gap-2 sm:gap-3">
+          <div className="flex min-w-0 flex-wrap md:flex-nowrap items-center justify-center md:justify-end md:justify-self-end gap-2 sm:gap-3">
             {user ? (
               <>
                 <span className="hidden text-sm text-white/60 truncate max-w-[120px] sm:inline md:max-w-[150px]">
@@ -75,8 +76,8 @@ const Header = async () => {
                 {t('logIn')}
               </Link>
             )}
-            <details className="relative shrink-0 rounded-md bg-blue-800 px-4 py-1 transition-colors hover:bg-blue-900 open:bg-blue-900 ml-20 mr-8">
-              <summary className="tracking-widecursor-pointer list-none whitespace-nowrap select-none marker:content-none [&::-webkit-details-marker]:hidden">
+            <details className="relative shrink-0 rounded-md bg-blue-800 px-4 py-1 transition-colors hover:bg-blue-900 open:bg-blue-900 mx-2 md:ml-20 md:mr-8 z-50">
+              <summary className="tracking-wide cursor-pointer list-none whitespace-nowrap select-none marker:content-none [&::-webkit-details-marker]:hidden">
                 {t('language')}
               </summary>
               <ul className="absolute right-0 p-6 rounded-md border border-white/20 bg-gray-800/80 py-1 mt-2 shadow-lg">
@@ -96,7 +97,7 @@ const Header = async () => {
             <CartIcon totalItems={totalItems} />
             <Link
               href="/menu"
-              className="font-bold whitespace-nowrap text-sm ml-10 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md transition-colors font-medium hover:scale-105"
+              className="font-bold whitespace-nowrap text-sm ml-2 md:ml-10 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md transition-colors font-medium hover:scale-105"
             >
               {t('orderNow')}
             </Link>
