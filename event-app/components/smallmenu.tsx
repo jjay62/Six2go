@@ -23,14 +23,14 @@ interface SmallMenuProps {
 const ids = [1, 4, 6, 7, 10, 11, 17, 21]
 const SmallMenu = ({ items }: SmallMenuProps) => {
   const t = useTranslations('Menu')
-  const categories: { key: Category; label: string }[] = [
-    { key: 'Our choices', label: t('ourChoices') },
-    { key: 'Meal Deals', label: t('mealDeals') },
-    { key: 'Burgers', label: t('burgers') },
-    { key: 'Pizzas', label: t('pizzas') },
-    { key: 'Pastas', label: t('pastas') },
-    { key: 'Desserts', label: t('desserts') },
-    { key: 'Drinks', label: t('drinks') },
+  const categories: { key: Category; cat: string }[] = [
+    { key: 'Our choices', cat: t('ourChoices') },
+    { key: 'Meal Deals', cat: t('mealDeals') },
+    { key: 'Burgers', cat: t('burgers') },
+    { key: 'Pizzas', cat: t('pizzas') },
+    { key: 'Pastas', cat: t('pastas') },
+    { key: 'Desserts', cat: t('desserts') },
+    { key: 'Drinks', cat: t('drinks') },
   ]
 
   const [filter, setFilter] = useState<Category>('Our choices');
@@ -50,13 +50,13 @@ const SmallMenu = ({ items }: SmallMenuProps) => {
 
       
       <div className="flex flex-wrap gap-3 mb-12 justify-center items-center text-center">
-        {categories.map(({ key, label }) => (
+        {categories.map(({ key, cat }) => (
           <BtnSM
             key={key}
             active={filter === key}
             onClick={() => setFilter(key)}
           >
-            {label}
+            {cat}
           </BtnSM>
         ))}
       </div>

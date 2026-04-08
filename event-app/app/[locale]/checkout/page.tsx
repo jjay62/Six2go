@@ -19,7 +19,7 @@ export default async function CheckoutPage() {
 
   if (!user) {
     redirect({ href: '/login', locale: await getLocale() })
-    throw new Error('UNREACHABLE')
+    throw new Error('not found')
   }
 
   const { data: cartItems, error: cartError } = await supabase

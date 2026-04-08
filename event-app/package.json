@@ -14,6 +14,8 @@
     "@supabase/ssr": "^0.9.0",
     "@supabase/supabase-js": "^2.100.0",
     "atropos": "^2.0.2",
+    "lucide": "^1.3.0",
+    "lucide-react": "^1.3.0",
     "motion": "^12.38.0",
     "next": "^16.2.0",
     "next-intl": "^4.8.3",

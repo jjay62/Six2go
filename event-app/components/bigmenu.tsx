@@ -22,15 +22,15 @@ const ProductsPerPage = 8;
 const BigMenu = ({ items }: BigMenuProps) => {
   const t = useTranslations('Menu')
   type Category = 'All' | 'Meal Deals' | 'Burgers' | 'Sides' | 'Pizzas' | 'Pastas' | 'Desserts' | 'Drinks'
-  const categories: { key: Category; label: string }[] = [
-    { key: 'All', label: t('all') },
-    { key: 'Meal Deals', label: t('mealDeals') },
-    { key: 'Burgers', label: t('burgers') },
-    { key: 'Pizzas', label: t('pizzas') },
-    { key: 'Sides', label: t('sides') },
-    { key: 'Pastas', label: t('pastas') },
-    { key: 'Desserts', label: t('desserts') },
-    { key: 'Drinks', label: t('drinks') },
+  const categories: { key: Category; cat: string }[] = [
+    { key: 'All', cat: t('all') },
+    { key: 'Meal Deals', cat: t('mealDeals') },
+    { key: 'Burgers', cat: t('burgers') },
+    { key: 'Pizzas', cat: t('pizzas') },
+    { key: 'Sides', cat: t('sides') },
+    { key: 'Pastas', cat: t('pastas') },
+    { key: 'Desserts', cat: t('desserts') },
+    { key: 'Drinks', cat: t('drinks') },
   ]
 
   const [page, setPage] = useState(1);
@@ -54,13 +54,13 @@ const BigMenu = ({ items }: BigMenuProps) => {
 
       
       <div className="flex flex-wrap gap-3 mb-12 justify-center items-center text-center">
-        {categories.map(({ key, label }) => (
+        {categories.map(({ key, cat }) => (
           <BtnSM
             key={key}
             active={filter === key}
             onClick={() => {setFilter(key); setPage(1);}}
           >
-            {label}
+            {cat}
           </BtnSM>
         ))}
       </div>

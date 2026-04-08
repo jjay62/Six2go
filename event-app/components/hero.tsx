@@ -1,36 +1,41 @@
 import Link from 'next/link'
 import React from 'react'
 import { getTranslations } from 'next-intl/server'
+
 const Hero = async () => {
   const t = await getTranslations('Hero');
-  return (
-    <>
-<section className="relative min-h-[100vh] flex items-start pt-60 justify-center overflow-hidden">
 
-      <div className="max-w-7xl mt-16 text-center relative z-10">
-        <h1 className="text-4xl sm:text-7xl font-bold tracking-tight animate-color-shift text-[#2992CF]">
+  return (
+    <section className="relative h-[100svh] flex items-center justify-center">
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        src="/videos/herovideo.mp4"
+      />
+      <div className="absolute inset-0 bg-black/40" />
+      <div className="relative z-10 text-center px-4 max-w-4xl">
+        <h1 className="text-4xl sm:text-7xl font-bold tracking-tight text-blue-500">
           {t('title')}
         </h1>
-        <p className="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-[#2992CF]">
+
+        <p className="mt-6 text-lg sm:text-xl text-blue-500/90">
           {t('description')}
         </p>
-        <div className="mt-10 flex flex-row gap-4 justify-center items-center flex-wrap">
-          <Link href="/menu" className="px-5 py-3 bg-[#2992CF] text-white rounded-md font-bold hover:bg-[#29709E] hover:scale-105 transition-all duration-200">
-          {t('menubutton')}</Link>
+
+        <div className="mt-10 flex justify-center">
+          <Link
+            href="/menu"
+            className="px-6 py-3 bg-blue-500 text-white bg-blue-500 rounded-md font-bold hover:bg-blue-700 hover:scale-105 transition-all duration-200"
+          >
+            {t('menubutton')}
+          </Link>
         </div>
       </div>
-      <video
-    className="absolute inset-0 h-full w-full object-cover z-0 bg-black/40"
-    autoPlay
-    muted
-    loop
-    playsInline
-    src="/videos/herovideo.mp4"
-  />
+
     </section>
-  
-   
-    </>
   )
 }
 
