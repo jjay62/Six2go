@@ -66,8 +66,8 @@ export async function POST() {
       cancel_url: `${origin}/checkout`,
       client_reference_id: user.id,
       metadata: { supabase_user_id: user.id },
+      billing_address_collection: 'required',
       shipping_address_collection: {
-        required: true,
         allowed_countries: ['NL']
       }
     })
