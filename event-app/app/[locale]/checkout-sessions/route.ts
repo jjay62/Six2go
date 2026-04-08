@@ -15,7 +15,9 @@ export async function POST() {
     if (!user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
-
+    const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
+      apiVersion: '2026-03-25.dahlia'
+    });
     const { data: cartItems, error } = await supabase
       .from('cart_items')
       .select('id, quantity, menu_items(title, price)')
@@ -57,7 +59,7 @@ export async function POST() {
     const origin =
       headersList.get('origin') ??
       (process.env.NEXT_PUBLIC_SITE_URL as string | undefined) ??
-      'https://sixtwogo.vercel.app' 
+      'http://localhost:3000'
 
     const session = await stripe.checkout.sessions.create({
       line_items,
@@ -66,7 +68,6 @@ export async function POST() {
       cancel_url: `${origin}/checkout`,
       client_reference_id: user.id,
       metadata: { supabase_user_id: user.id },
-      billing_address_collection: 'required',
       shipping_address_collection: {
         allowed_countries: ['NL']
       }
