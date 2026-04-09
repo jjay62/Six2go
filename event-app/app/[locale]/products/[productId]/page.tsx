@@ -12,14 +12,14 @@ export default async function ProductDetails({
   params: Promise<{ productId: string }>
 }) {
   const productIdParam = (await params).productId
-  const idNum = Number(productIdParam)
-  if (!Number.isFinite(idNum)) notFound()
+  const idNotFound = Number(productIdParam)
+  if (!Number.isFinite(idNotFound)) notFound()
 
   const supabase = await createClient()
   const { data: product, error } = await supabase
     .from('menu_items')
     .select('*')
-    .eq('id', idNum)
+    .eq('id', idNotFound)
     .single()
 
   if (error || !product) notFound()
