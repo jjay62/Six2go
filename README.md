@@ -1,4 +1,4 @@
-### SixtwoGo
+# Six2go
 
 A modern full-stack web application built with **Next.js**, **React**, and **Tailwind CSS**, powered by **Supabase** for backend services and **Stripe** for secure payments.
 
