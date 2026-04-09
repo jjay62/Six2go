@@ -6,6 +6,7 @@ import { redirect } from '@/i18n/navigation'
 import Image from 'next/image'
 import { CartIcon } from './cartIcon'
 import { getTranslations } from 'next-intl/server'
+import LanguageSwitcher from './languageSwitcher'
 
 export async function getTotalItems(userId: string | null) {
   if (!userId) return 0
@@ -76,24 +77,8 @@ const Header = async () => {
                 {t('logIn')}
               </Link>
             )}
-            <details className="relative shrink-0 rounded-md bg-blue-800 px-4 py-1 transition-colors hover:bg-blue-900 open:bg-blue-900 mx-2 md:ml-20 md:mr-8 z-50">
-              <summary className="tracking-wide cursor-pointer list-none whitespace-nowrap select-none marker:content-none [&::-webkit-details-marker]:hidden">
-                {t('language')}
-              </summary>
-              <ul className="absolute right-0 p-6 rounded-md border border-white/20 bg-gray-800/80 py-1 mt-2 shadow-lg">
-                <li>
-                  <Link
-                    href="/en"
-                    className="block px-3 py-2 text-sm text-white hover:bg-white/10 tracking-wider"
-                  >
-                    English(uk)
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/nl" className="block px-3 py-2 text-sm text-white hover:bg-white/10 tracking-wider"> Dutch(nl) </Link>
-                </li>
-              </ul>
-            </details>
+
+            <LanguageSwitcher />
             <CartIcon totalItems={totalItems} />
             <Link
               href="/menu"
