@@ -106,29 +106,14 @@ http://localhost:3000
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 The easiest way to deploy:
 
 1. Push your code to GitHub
 2. Import the repo into Vercel
 3. Add your environment variables
-4. Deploy 🎉
+4. Deploy 
 
 ---
 
-## 📌 Notes
-
-* Make sure environment variables are correctly set
-* Never expose secret keys in the frontend
-* Use Stripe webhooks for reliable payment handling
-
----
-
-## 👨‍💻 Author
-
-Built by jay62 
-msg me on discord: jayk62
-email: jayklav62@gmail.com
-
----
