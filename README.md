@@ -8,7 +8,7 @@ A modern full-stack web application built with **Next.js**, **React**, and **Tai
 
 ## ✨ Features
 
-* ⚡ Fast and responsive UI with Next.js & React
+* ⚡ Fast UI with Next.js & React
 * 🎨 Clean styling using Tailwind CSS
 * 🔐 Authentication and database powered by Supabase
 * 💳 Secure payments integration with Stripe
