@@ -127,8 +127,8 @@ The easiest way to deploy:
 
 ## 👨‍💻 Author
 
-Built by jay62 😎
-Feel free to fork, improve, and customize!
+Built by jay62 
 msg me on discord: jayk62
+email: jayklav62@gmail.com
 
 ---
