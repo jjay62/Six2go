@@ -2,7 +2,7 @@
 import { Link } from '@/i18n/navigation'
 import React from 'react'
 import { easeOut, motion } from 'motion/react'
-const AboutSmallText = ({ href, title, description, createdBy, learnMore }: { href: string, title: any, description: string, createdBy: string, learnMore: string }) => {
+const AboutSmallText = ({ href, title, description, createdBy, learnMore }: { href: string; title: string; description: string; createdBy: string; learnMore: string }) => {
   return (
     <motion.div initial={{ opacity: 0, x: 300 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 2, ease: easeOut }} viewport={{ once: true }}>
     <div className="flex min-w-0 w-full max-w-xl justify-center md:justify-start">

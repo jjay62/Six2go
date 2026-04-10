@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { headers } from 'next/headers'
 import type Stripe from 'stripe'
 
-import { stripe } from '@/lib/stripe'
+import { getStripe } from '@/lib/stripe'
 import { createAdminClient } from '@/lib/admin'
 
 export async function fulfillCheckoutSession(session: Stripe.Checkout.Session) {
@@ -72,7 +72,7 @@ export async function handleStripeWebhook(req: Request) {
         { status: 500 }
       )
     }
-    event = stripe.webhooks.constructEvent(body, signature, secret)
+    event = getStripe().webhooks.constructEvent(body, signature, secret)
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err)
     console.log(err)

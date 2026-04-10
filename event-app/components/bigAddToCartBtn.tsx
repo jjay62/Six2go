@@ -13,7 +13,7 @@ const BigAddToCartBtn = ({ menuItemId, disabled }: { menuItemId: number, disable
         whileTap={{ scale: 0.95, transition: { duration: 0.3 } }}
         disabled={disabled}
         type="submit"
-        className="disabled:bg-red-600 disabled:cursor-not-allowed disabled:opacity-50  inline-flex items-center gap-2 rounded-md bg-blue-600 px-20 py-4 text-md font-semibold text-white transition-colors hover:bg-blue-700 hover:scale-102"
+        className="disabled:bg-red-600 disabled:cursor-not-allowed disabled:opacity-50 inline-flex items-center gap-2 rounded-md bg-blue-600 px-20 py-4 text-md font-semibold text-white transition-colors hover:bg-blue-700 hover:scale-102"
       >
         {disabled ? t('outOfStock') : t('addToCart')} <ShoppingCartIcon />
         
