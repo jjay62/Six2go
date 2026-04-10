@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server'
 import { headers } from 'next/headers'
 import { createClient } from '@/lib/server'
-import { stripe } from '@/lib/stripe'
+import { getStripe } from '@/lib/stripe'
+import { getLocale } from 'next-intl/server'
 
 type MenuItemJoin = { title?: string | null; price?: number | null } | null
 
@@ -14,8 +15,6 @@ export async function POST() {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-
-    const stripeInstance = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
     const { data: cartItems, error } = await supabase
       .from('cart_items')
@@ -47,9 +46,10 @@ export async function POST() {
                    process.env.NEXT_PUBLIC_SITE_URL || 
                    'https://sixtwogo.vercel.app';
 
-    const session = await stripeInstance.checkout.sessions.create({
+    const session = await getStripe().checkout.sessions.create({
       line_items,
       mode: 'payment',
+      locale: (await getLocale()) as 'en' | 'nl',
       success_url: `${origin}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/checkout`,
       client_reference_id: user.id,
@@ -69,7 +69,7 @@ export async function POST() {
     })
 
     return NextResponse.json({ url: session.url })
-  } catch (err) {
+  } catch {
     return NextResponse.json({ error: 'Checkout failed' }, { status: 500 })
   }
 }
