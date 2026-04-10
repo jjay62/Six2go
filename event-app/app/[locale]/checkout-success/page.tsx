@@ -1,6 +1,6 @@
 import { getLocale, getTranslations } from 'next-intl/server'
 import { redirect } from '@/i18n/navigation'
-import { stripe } from '@/lib/stripe'
+import { getStripe } from '@/lib/stripe'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Link from 'next/link'
@@ -18,7 +18,7 @@ export default async function Success({
 
   const {
     status,
-  } = await stripe.checkout.sessions.retrieve(session_id, {
+  } = await getStripe().checkout.sessions.retrieve(session_id, {
     expand: ['line_items', 'payment_intent'],
   })
 

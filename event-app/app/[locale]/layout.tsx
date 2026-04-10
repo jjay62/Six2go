@@ -19,9 +19,9 @@ export default async function RootLayout({
 
   const { locale } = await params;
 
-if (!routing.locales.includes(locale as any)) {
-  notFound()
-}
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
+    notFound()
+  }
   return (
     <html lang={locale}>
     <body className="min-h-full flex flex-col">
