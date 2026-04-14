@@ -22,7 +22,7 @@ async function main() {
     const text = await body.getText()
     assert.ok(text.length > 0, 'product page should have visible text')
 
-    console.log('cart.selenium: PASS (/products/1 loaded)')
+    console.log('/products/1 successfully loaded')
   } finally {
     await driver.quit()
   }
