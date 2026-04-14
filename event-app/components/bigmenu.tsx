@@ -47,8 +47,8 @@ const BigMenu = ({ items }: BigMenuProps) => {
   return (
     <>
     <section className="max-w-7xl mx-auto px-4 py-8 justify-center items-center text-center">
-      <h2 className="text-2xl font-bold text-white mb-2">{t('title')}</h2>
-      <p className="text-gray-300 mb-6">
+      <h2 className="text-2xl font-bold text-white mb-2 mt-8">{t('title')}</h2>
+      <p className="text-gray-300 mb-12">
         {t('description')}
       </p>
 
