@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "test:e2e": "node app/unitTestingFile/selenium/cart.selenium.mjs",
+    "test:e2e": "node app/unitTestingFile/selenium/selenium.mjs",
     "start": "next start",
     "lint": "eslint"
   },
