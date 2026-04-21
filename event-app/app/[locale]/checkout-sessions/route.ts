@@ -41,9 +41,9 @@ export async function POST() {
       .filter((li) => li.price_data.unit_amount > 0)
 
     const headersList = await headers()
-    
-    const origin = headersList.get('origin') || 
-                   process.env.NEXT_PUBLIC_SITE_URL || 
+
+    const origin = headersList.get('origin') ||
+                   process.env.NEXT_PUBLIC_SITE_URL ||
                    'https://sixtwogo.vercel.app';
 
     const session = await getStripe().checkout.sessions.create({

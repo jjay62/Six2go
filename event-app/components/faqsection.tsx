@@ -15,7 +15,7 @@ export default async function Faqsection() {
         <summary className="cursor-pointer font-medium">{t('q2')}</summary>
         <p className="mt-2 text-white/70">{t('a2')}</p>
       </details>
-      <details className="rounded-lg border-r border-gray-700 hover:border-blue-500 bg-gray-900 p-4 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-200">
+      <details className="rounded-lg border-2 border-gray-700 hover:border-blue-500 bg-gray-900 p-4 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-200">
         <summary className="cursor-pointer font-medium">{t('q3')}</summary>
         <p className="mt-2 text-white/70">{t('a3')}</p>
       </details>
