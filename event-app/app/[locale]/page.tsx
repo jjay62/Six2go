@@ -11,7 +11,8 @@ import TopChoices from '@/components/topchoices';
 import SmallMenu from '@/components/smallmenu';
 import Faqsection from '@/components/faqsection';
 import { getTranslations } from 'next-intl/server';
-
+import { Suspense } from 'react';
+import SecretFeature from '@/components/secretFeature';
 
 export default async function Home() {
   const supabase = await createClient()
@@ -33,6 +34,10 @@ export default async function Home() {
   .from('menu_items')
   .select('*')
   .order('id')
+  const { data: MenuItems } = await supabase
+  .from('menu_items')
+  .select('*')
+  .order('id')
   return (
     <>
       <div className="fixed inset-x-0 top-0 z-50 w-full bg-[#1f2937]">
@@ -49,7 +54,11 @@ export default async function Home() {
       <AboutSection />
 
       <SmallMenu items={smallMenu ?? []} />
-
+      <div className="mb-6">
+      <Suspense fallback={<div>Loading Wheel...</div>}>
+        <SecretFeature items={MenuItems || []}  />
+      </Suspense>
+      </div>
       <Faqsection />
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto px-4 py-4 justify-items-center md:justify-items-stretch">

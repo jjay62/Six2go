@@ -51,9 +51,14 @@ export default async function CheckoutPage() {
         <h2 className="mb-4 text-lg font-bold text-white">{t('yourCart')}</h2>
 
         {!cartItems || cartItems.length === 0 ? (
-          <p className="text-sm text-white/50">
-            {t('emptyCart')}
+          <div className="">
+          <p className="text-sm text-white/70">
+            {t('emptyCartOne')}
+            <Link href="/menu" className="text-blue-500/70 hover:text-blue-600 hover:underline">{t('emptyCartTwo')}</Link>
           </p>
+            <p className="text-sm text-white/50">{t('emptyCartThree')}</p>
+          </div>
+
         ) : (
           <div className="space-y-4">
             {cartItems.map((item) => {
